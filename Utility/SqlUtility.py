@@ -7,9 +7,9 @@ class MySQLConn:
 
 		cursor=conn.cursor()
 
-		cursor.execute('SETNAMESutf8;')
-		cursor.execute('SETCHARACTERSETutf8;')
-		cursor.execute('SETcharacter_set_connection=utf8;')
+		cursor.execute('SET NAMES utf8mb4;')
+		cursor.execute('SET CHARACTER SET utf8mb4;')
+		cursor.execute('SET character_set_connection=utf8mb4;')
 
 		self.conn=conn
 		self.cursor=cursor
