@@ -16,7 +16,8 @@ def get_response_content_for_url(url, decode='utf8'):
 	try:
 		resp = urlopen(request)
 		content = resp.read().decode(decode)
-	except:
+	except Exception as e:
+		print(e)
 		return False, ''
 
 	return True, content
