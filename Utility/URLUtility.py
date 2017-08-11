@@ -15,6 +15,10 @@ def get_response_content_for_url(url, decode='utf8'):
 	request = Request(url, headers=hdr)
 	try:
 		resp = urlopen(request)
+		if resp.status != 200:
+			print('resp status ', resp.status)
+			return False, ''
+
 		content = resp.read().decode(decode)
 	except Exception as e:
 		print(e)
