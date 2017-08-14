@@ -1,4 +1,5 @@
 import re
+import math
 
 class StrUtility:
 	bracket_pattern = re.compile(r'[\[【\(（].*[\]】\)）]')
@@ -14,6 +15,11 @@ class StrUtility:
 	end_puncation_pattern = re.compile(r'[\.?"`~\'。，？]+$')
 
 	@staticmethod
-	def remove_str_bracket(str):
-		return bracket_pattern.sub('', str)
-	
+	def remove_str_bracket(s):
+		return bracket_pattern.sub('', s)
+
+	@staticmethod
+	def isnan(s):
+		if type(s) != float:
+			return False
+		return math.isnan(s)
